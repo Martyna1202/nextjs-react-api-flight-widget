@@ -12,7 +12,7 @@ function useFlights(id) {
       method: "GET",
     });
 
-  const { data, error } = useSWR("http://localhost:3000/api/flights", fetcher, {
+  const { data, error } = useSWR("/api/flights", fetcher, {
     refreshInterval: 10000,
   });
   return {
