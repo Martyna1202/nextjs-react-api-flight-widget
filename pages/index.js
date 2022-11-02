@@ -1,9 +1,11 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Table from "../components/table/Table";
 import axios from "axios";
 import useSWR from "swr";
+import Head from "next/head";
+import Image from "next/image";
 import { useEffect } from "react";
+import styles from "../styles/Home.module.css";
+import Table from "../components/table/Table";
+import toronto from "../public/cityByNight.jpeg";
 
 // Custome get flights hook
 function useFlights(id) {
@@ -13,7 +15,7 @@ function useFlights(id) {
     });
 
   const { data, error } = useSWR("/api/flights", fetcher, {
-    refreshInterval: 10000,
+    refreshInterval: 30000,
   });
   return {
     flights: data,
@@ -44,6 +46,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Image
+        src={toronto}
+        alt="Toronto by night"
+        layout="fill"
+        style={{ zIndex: -1 }}
+      />
       <main className={styles.departures}>
         <Table data={flights.data} />
       </main>

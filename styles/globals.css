@@ -13,10 +13,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url(../public/cityByNight.jpeg) no-repeat center center fixed;
+  background: url("../public/cityByNight.jpeg") no-repeat center center fixed;
   background-size: cover;
 }
 
 header {
   padding: 10px;
 }
+
+/* .container {
+  background: url(../public/cityByNight.jpeg) no-repeat center center fixed;
+  background-size: cover;
+} */
